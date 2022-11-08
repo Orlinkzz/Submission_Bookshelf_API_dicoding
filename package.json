@@ -1,0 +1,33 @@
+{
+  "name": "submission_bookshelf_api_dicoding",
+  "version": "1.0.0",
+  "description": "Submission dicoding",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Orlinkzz/Submission_Bookshelf_API_dicoding.git"
+  },
+  "keywords": [
+    "restful",
+    "api"
+  ],
+  "author": "humaedi",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^20.1.2",
+    "nanoid": "^3.1.22"
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.7"
+  },
+  "bugs": {
+    "url": "https://github.com/Orlinkzz/Submission_Bookshelf_API_dicoding/issues"
+  },
+  "homepage": "https://github.com/Orlinkzz/Submission_Bookshelf_API_dicoding#readme"
+}
