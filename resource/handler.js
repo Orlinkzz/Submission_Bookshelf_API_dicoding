@@ -1,7 +1,7 @@
 const { nanoid } = require('nanoid');
 const books = require('./books');
 
-const addBookHandler = (request, h) => {
+const tambahBuku = (request, h) => {
   const { name, year, author, summary, publisher, pageCount, readPage, reading } = request.payload;
   const id = nanoid(16);
   const insertedAt = new Date().toISOString();
@@ -49,7 +49,7 @@ const addBookHandler = (request, h) => {
   return response;
 };
 
-const getAllBooksHandler = (request, h) => {
+const DapatkanSemuaBuku = (request, h) => {
   const { name, reading, finished } = request.query;
   let filteredBooks = books;
   if (name !== undefined) {
@@ -75,7 +75,7 @@ const getAllBooksHandler = (request, h) => {
   return response;
 };
 
-const getBookByIdHandler = (request, h) => {
+const DapakanBukuById = (request, h) => {
   const { bookId } = request.params;
   const book = books.filter((n) => n.id === bookId)[0];
   if (book !== undefined) {
@@ -94,7 +94,7 @@ const getBookByIdHandler = (request, h) => {
   return response;
 }
 
-const editBookByIdHandler = (request, h) => {
+const EditBukuById = (request, h) => {
   const { bookId } = request.params;
   const { name, year, author, summary, publisher, pageCount, readPage, reading } = request.payload;
   const updatedAt = new Date().toISOString();
@@ -143,7 +143,7 @@ const editBookByIdHandler = (request, h) => {
   return response;
 }
 
-const deleteBookByIdHandler = (request, h) => {
+const HapusBukuById = (request, h) => {
   const { bookId } = request.params;
   const index = books.findIndex((book) => book.id === bookId);
   if (index !== -1) {
@@ -164,9 +164,9 @@ const deleteBookByIdHandler = (request, h) => {
 }
 
 module.exports = {
-  addBookHandler,
-  getAllBooksHandler,
-  getBookByIdHandler,
-  editBookByIdHandler,
-  deleteBookByIdHandler,
+  tambahBuku,
+  DapatkanSemuaBuku,
+  DapakanBukuById,
+  EditBukuById,
+  HapusBukuById,
 };
